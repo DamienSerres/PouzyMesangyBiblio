@@ -31,6 +31,11 @@
               </Group>
               <EmptySpace pref="30" max="32767" attributes="0"/>
           </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jButtonAnnuler" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -40,7 +45,9 @@
               <Component id="jLabelBibliotheque" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="173" max="-2" attributes="0"/>
-              <EmptySpace pref="210" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+              <Component id="jButtonAnnuler" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="138" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -117,6 +124,7 @@
                 </Column>
               </TableColumnModel>
             </Property>
+            <Property name="columnSelectionAllowed" type="boolean" value="true"/>
             <Property name="selectionMode" type="int" value="0"/>
             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
@@ -129,6 +137,14 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Bibliotheque"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonAnnuler">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Annuler"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAnnulerActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

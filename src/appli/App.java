@@ -11,6 +11,7 @@ import services.CParametresStockageBDD;
 import IHM.JFrameBibliotheque;
 import entities.Livre;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import services.CTableLivres;
 
@@ -29,11 +30,9 @@ public class App {
         biblio = new Bibliotheque();
         jFrameBiblio = new JFrameBibliotheque();
         tableLivres = new CTableLivres(new CBDD(new CParametresStockageBDD("parametresBdd.properties")));
+        jFrameBiblio.app = this;
         this.majBiblio();
-        //this.afficherListejTableBiblio();
 
-        //this.setRowCountjTableBiblio(0);
-        this.jFrameBiblio.getjTableBibliotheque().setRowSelectionInterval(0, 0);
         jFrameBiblio.setVisible(true);
 
     }
@@ -87,5 +86,10 @@ public class App {
     public static void main(String[] args) {
         new App().runBibliothequeIHM();
 
+    }
+
+    public void jFrameBiblioBoutonAnnuler() {
+        JOptionPane.showMessageDialog(null, "Annulation en cours...");
+        
     }
 }

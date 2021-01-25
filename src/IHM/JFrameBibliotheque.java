@@ -5,16 +5,8 @@
  */
 package IHM;
 
-import java.awt.AWTException;
-import static java.awt.Event.ENTER;
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JComboBox;
+import appli.App;
 import javax.swing.JTable;
-import javax.swing.JTextField;
-import javax.swing.event.ChangeEvent;
 
 /**
  *
@@ -23,6 +15,7 @@ import javax.swing.event.ChangeEvent;
 public class JFrameBibliotheque extends javax.swing.JFrame {
 
     public String[] idLivres;
+    public App app;
 
     /**
      * Creates new form JFrameBibliothèque
@@ -43,6 +36,7 @@ public class JFrameBibliotheque extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableBibliotheque = new javax.swing.JTable();
         jLabelBibliotheque = new javax.swing.JLabel();
+        jButtonAnnuler = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,11 +66,19 @@ public class JFrameBibliotheque extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTableBibliotheque.setColumnSelectionAllowed(true);
         jTableBibliotheque.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(jTableBibliotheque);
         jTableBibliotheque.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
         jLabelBibliotheque.setText("Bibliotheque");
+
+        jButtonAnnuler.setText("Annuler");
+        jButtonAnnuler.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAnnulerActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -88,6 +90,10 @@ public class JFrameBibliotheque extends javax.swing.JFrame {
                     .addComponent(jLabelBibliotheque)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 641, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(30, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonAnnuler)
+                .addGap(62, 62, 62))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -96,11 +102,18 @@ public class JFrameBibliotheque extends javax.swing.JFrame {
                 .addComponent(jLabelBibliotheque)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(210, Short.MAX_VALUE))
+                .addGap(49, 49, 49)
+                .addComponent(jButtonAnnuler)
+                .addContainerGap(138, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonAnnulerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnnulerActionPerformed
+        // TODO add your handling code here:
+        app.jFrameBiblioBoutonAnnuler();
+    }//GEN-LAST:event_jButtonAnnulerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,6 +154,7 @@ public class JFrameBibliotheque extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonAnnuler;
     private javax.swing.JLabel jLabelBibliotheque;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableBibliotheque;
